@@ -1,0 +1,33 @@
+# .gitignore for ABAP Development
+
+# SAP System Files
+*.log
+*.tmp
+*.bak
+*.sap
+*.lock
+
+# IDE Specific Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Build and compiled files
+*.o
+*.class
+*.exe
+
+# Environment Variables
+.env
+.env.local
+
+# Transport files (optional - can include if needed)
+# *.trk
+# *.xml
+
+# Temporary files
+~*
+*.~

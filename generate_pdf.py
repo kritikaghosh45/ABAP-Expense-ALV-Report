@@ -1,4 +1,4 @@
-"""
+﻿"""
 Generate project documentation PDF for ABAP Expense ALV Report
 Uses reportlab to create a professional 5-page PDF document
 """
@@ -47,23 +47,6 @@ body_style = ParagraphStyle(
     alignment=TA_JUSTIFY,
     spaceAfter=6
 )
-
-
-def screenshot_placeholder(title: str):
-    placeholder = Table(
-        [[Paragraph(f"<b>{title}</b><br/><br/><i>Screenshot placeholder</i>", body_style)]],
-        colWidths=[6 * inch],
-        rowHeights=[1.4 * inch],
-    )
-    placeholder.setStyle(TableStyle([
-        ('BACKGROUND', (0, 0), (-1, -1), colors.HexColor('#F8F8F8')),
-        ('BOX', (0, 0), (-1, -1), 1, colors.HexColor('#003366')),
-        ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
-        ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
-        ('TEXTCOLOR', (0, 0), (-1, -1), colors.HexColor('#333333')),
-        ('FONTSIZE', (0, 0), (-1, -1), 10),
-    ]))
-    return placeholder
 
 # ========== PAGE 1: Title Page ==========
 story.append(Spacer(1, 1.5*inch))
@@ -268,23 +251,10 @@ sample_table.setStyle(TableStyle([
 ]))
 story.append(sample_table)
 
-story.append(Spacer(1, 0.3*inch))
-story.append(Paragraph("6. Screenshot References", heading_style))
-story.append(Paragraph(
-    "Add actual screenshots in the final report to show the SAP selection screen, ALV output, and ABAP source code.",
-    body_style
-))
-story.append(Spacer(1, 0.1*inch))
-story.append(screenshot_placeholder("SAP Report Selection Screen"))
-story.append(Spacer(1, 0.15*inch))
-story.append(screenshot_placeholder("ALV Expense Report Output"))
-story.append(Spacer(1, 0.15*inch))
-story.append(screenshot_placeholder("ABAP Source Code View"))
-
 story.append(PageBreak())
 
 # ========== PAGE 5: Future Enhancements & Deployment ==========
-story.append(Paragraph("7. Future Enhancements & Scalability", heading_style))
+story.append(Paragraph("6. Future Enhancements & Scalability", heading_style))
 
 enhancements = [
     "<b>Database Integration:</b> Connect to actual SAP tables (EKPO, VBRK, COEP) for real expense data",
@@ -303,7 +273,7 @@ for enhancement in enhancements:
     story.append(Paragraph(f"• {enhancement}", body_style))
 
 story.append(Spacer(1, 0.3*inch))
-story.append(Paragraph("8. Deployment & Installation", heading_style))
+story.append(Paragraph("7. Deployment & Installation", heading_style))
 
 deploy_data = [
     ["Stage", "Steps"],
@@ -330,7 +300,7 @@ deploy_table.setStyle(TableStyle([
 story.append(deploy_table)
 
 story.append(Spacer(1, 0.3*inch))
-story.append(Paragraph("9. Project Statistics", heading_style))
+story.append(Paragraph("8. Project Statistics", heading_style))
 
 stats_data = [
     ["Metric", "Value"],

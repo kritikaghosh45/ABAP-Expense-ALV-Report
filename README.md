@@ -71,14 +71,7 @@ ABAP_Expense_ALV_Report/
 ```
 
 ## Author
-KIIT Developer  
+Kritika Ghosh 
 Roll: 23051024
 
-## License
-Internal Use Only - SAP Development
 
-## Contact & Support
-For issues or enhancements, refer to SAP ABAP development guidelines.
-
----
-**Last Updated**: April 2026
